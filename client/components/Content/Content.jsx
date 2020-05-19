@@ -30,14 +30,12 @@ export default class Content extends Component {
     fetchFromDb() {
         axios.get('http://localhost:3000/api/piggies/getPiggies')
         .then((res) => {
-            console.log('DATA',res.data)
             return res.data.map(piggy => piggy)
         })
         .then((piggies) => {
             this.setState({
                 piggies //populate piggies in state from database
-            },        console.log(this.state.piggies)
-            )
+            }, console.log(piggies))
         })
         .catch(err => console.log('err', err))
     }
@@ -45,7 +43,11 @@ export default class Content extends Component {
     render(){
         return(
             <Background alignCenter flowColumn >
-                <FlexDiv><h1>Come play with us.</h1></FlexDiv>
+                <FlexDiv alignCenter flowColumn>
+                    <h1>Come play with us, Maddy.</h1>
+                    <h3>Coming Soon...</h3>
+                
+                </FlexDiv>
             </Background>
         )
     }

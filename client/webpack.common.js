@@ -10,7 +10,7 @@ let config = {
         path: path.resolve(__dirname, './public')
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'], // Automatically resolve certain extensions
+        extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'],
         alias: {
           images: path.resolve(__dirname, 'client/assets/images') 
         }
@@ -87,4 +87,3 @@ let config = {
 module.exports = config;
 
 
-//******************* currently building from port 8080

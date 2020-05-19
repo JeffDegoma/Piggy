@@ -3,11 +3,11 @@ import mongoose from 'mongoose'
 mongoose.Promise = global.Promise;
 
 try {
-    mongoose.connect(`mongodb://mongo/piggy`, { //mongo maps to docker service. change when running locally
+    mongoose.connect(`mongodb://${process.env.NODE_ENV}/oinkers`, { //process.env.NODE_ENV maps to docker service. 
         keepAlive: true
     })
 }   catch(err)  {
-    mongoose.createConnection(`mongodb://mongo/piggy`)
+    mongoose.createConnection(`mongodb://${process.env.NODE_ENV}/oinkers`)
 }
 
 mongoose.connection

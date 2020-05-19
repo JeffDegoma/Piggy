@@ -11,7 +11,16 @@ const PiggySchema = new Schema({
     },
     weapon: {
         type:       String,
-        required:     true,
+    },
+    cost: {
+        type:       Number,
+    },
+    image: {
+        type:       String
+    },
+    blurb: {
+        type:       String,
+        required:   true
     }
 })
 
