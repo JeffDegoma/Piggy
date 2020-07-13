@@ -10,6 +10,7 @@ const FlexDiv = styled.div `
 
     flex-flow: ${props => {
         if(props.flowColumn) return 'column'
+        return 'row'
     }};
 
     justify-content: ${props => {

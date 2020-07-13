@@ -1,38 +1,39 @@
 import { createGlobalStyle } from 'styled-components'
-// import Karlattf from '../../../assets/fonts/Karla-Regular.ttf'
-import background from '../../assets/images/ef0b79526578e5befc1c65f8be84e9a7.jpg'
+import { css } from 'styled-components'
+import StrangerCreature from '../../assets/fonts/StrangerCreature-MVpBr.ttf'
+
+
+const fontFace = css`
+    @font-face {
+        font-family: StrangerCreature;
+        font-style: normal;
+        src: url('${StrangerCreature}');
+    }
+`
 
 
 const GlobalStyle = createGlobalStyle`
-    
+    ${fontFace}
     * {
         box-sizing: border-box;
     }
     
-    @font-face {
-        font-family: Karla-Regular;
-        font-style: normal;
-        src: 
-            url('../../../assets/fonts/Karla-Regular.ttf') format('ttf');
-    }
+    
     html, body {
         margin: 0px;
-        font-family: Karla-Regular;
-        overflow-x: hidden;
-        &::before {
-            height: 100%;
-            content: '';
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-            background-size: cover;
-            opacity: .4;
-            background-image: url(${background});
-
+        font-family: StrangerCreature;
+        height: 100vh;
+        // background-image:url("https://static.zlibcdn.com/covers/books/8a/d3/8e/8ad38e347efbea15292f2c6d92e690eb.jpg");
+        // background-position: top;
+        background: black;
+        h2 {
+            color: #e40808;
+            width: 100%;
+            text-align: center;
+            font-size: 3em;
+            letter-spacing: 5px;
         }
-
+       
     }
     `
     
