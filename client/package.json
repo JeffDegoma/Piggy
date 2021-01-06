@@ -39,7 +39,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "enzyme-adapter-react-16": "^1.13.2",
     "file-loader": "^6.0.0",
     "jest-environment-enzyme": "^7.0.2",
