@@ -1,13 +1,24 @@
-FROM node:lts-alpine3.9
+#FROM node:lts-alpine3.9
+
+FROM node:12-alpine as builder
 
 WORKDIR /usr/local/app
 
-COPY package.*json ./
+COPY package.*json package-lock.json ./
 
-RUN npm i
+RUN npm audit fix
+
+RUN npm i --production
 
 COPY . ./
 
-EXPOSE 9000
+EXPOSE 80
 
-CMD ["npm", "run", "dev"]
+RUN npm run build
+
+FROM nginx
+
+COPY --from=builder /usr/local/app/public /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+

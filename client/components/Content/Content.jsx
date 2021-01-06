@@ -113,5 +113,3 @@ export default class Content extends Component {
         )
     }
 }
-
-
